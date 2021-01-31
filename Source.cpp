@@ -104,50 +104,50 @@ void User_Input()
         prevX = prev2X;
         prevY = prev2Y;
     }
-
+    
     if (_kbhit())
     {
         user_Input = _getch();
         switch (user_Input)
         {
-        case 'a':
+            case 'a':
             snake_HeadX--;
             break;
-        case 'd':
+            case 'd':
             snake_HeadX++;
             break;
-        case 's':
+            case 's':
             snake_HeadY++;
             break;
-        case 'w':
+            case 'w':
             snake_HeadY--;
             break;
-        case 'p':
+            case 'p':
             Debugger();
             _getch();
             break;
-        default:
+            default:
             return;
         }
     }
     else
         switch (user_Input)
-        {
+    {
         case 'a':
-            snake_HeadX--;
-            break;
+        snake_HeadX--;
+        break;
         case 'd':
-            snake_HeadX++;
-            break;
+        snake_HeadX++;
+        break;
         case 's':
-            snake_HeadY++;
-            break;
+        snake_HeadY++;
+        break;
         case 'w':
-            snake_HeadY--;
-            break;
+        snake_HeadY--;
+        break;
         default:
-            return;
-        }
+        return;
+    }
     
 }
 
@@ -160,7 +160,7 @@ void Game_Logic()
     }
     for (int i = 0; i < nTail; i++)
         if (tailX[i] == snake_HeadX && tailY[i] == snake_HeadY)
-            c_userIsAlive = false;
+        c_userIsAlive = false;
     if ((snake_HeadX == fruit_X) && (snake_HeadY == fruit_Y))
     {
         score++;
@@ -181,7 +181,7 @@ int Game_Assets(int Draw_X, int Draw_Y, char* OBJ_Icon)
         *OBJ_Icon = '$';
         return 1;
     }
-
+    
     return 0;
 }
 
@@ -201,5 +201,5 @@ void Debugger()
     cout << "FruitY" << fruit_Y << endl;
     cout << "TailX" << tailX[0] << endl;
     cout << "TailY" << tailY[0] << endl;
-
+    
 }
